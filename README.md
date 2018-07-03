@@ -23,20 +23,21 @@ npm install -g @futu/ada
 使用
 
 ```sh
-ada -p 12 -t X-XXXXXXXXXXXX -c ee9e4ad637b13e729e0d90c09a9b0990 -o dist.zip
+ada -g http://gitlab.futunn.com -p 12 -t X-XXXXXXXXXXXX -c ee9e4ad637b13e729e0d90c09a9b0990 -o dist.zip
 ```
 
 ## API使用
 
 ```javascript
 const Ada = require('@futu/ada');
-const ada = new Ada(12, 'X-XXXXXXXXXXXX');
+const ada = new Ada('http://gitlab.futunn.com', 12, 'X-XXXXXXXXXXXX');
 
 ada.download('ee9e4ad637b13e729e0d90c09a9b0990', './dist.zip');
 ```
 
 ## 参数说明：
 
+- `gitlab`/`g` Gitlab http(s)访问地址
 - `project`/`p` 项目id，数字
 - `token`/`t` Gitlab private token，在个人设置中可以生成
 - `commit`/`c` Commit Id

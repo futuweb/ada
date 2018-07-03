@@ -4,6 +4,7 @@ const args = parseArgs(process.argv);
 const path  = require('path');
 const Ada = require('../lib/index');
 
+const gitlabUrl = args.gitlab || args.g;
 const projectId = args.project || args.p;
 const token = args.token || args.t;
 const commitId = args.commit || args.c;
@@ -14,6 +15,7 @@ Ada: donwload artifacts of Gitlab CI pipelines/jobs.
 
 Arguments:
 
+    --gitlab    -g     Gitlab http(s) url
     --project   -p     Project id
     --token     -t     Gitlab private token
     --commit    -c     Commit id
@@ -25,7 +27,7 @@ if(!projectId || !token || !commitId){
     process.exit(1);
 }
 
-const ada = new Ada(projectId, token);
+const ada = new Ada(gitlabUrl, projectId, token);
 console.log('ready to download.');
 ada.download(commitId, filePath).then(() => {
     console.log('artifacts saved: ' + filePath);
