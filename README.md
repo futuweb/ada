@@ -42,8 +42,13 @@ ada.download('ee9e4ad637b13e729e0d90c09a9b0990', './dist.zip');
 - `token`/`t` Gitlab private token，在个人设置中可以生成
 - `commit`/`c` Commit Id
 - `output`/`o` 输出文件，在CLI模式中，默认为当前目录下的`artifacts.zip`
+- `apiver`/`a` API版本，默认为`4`，适用于Gitlab 12，如果使用Gitlab 10，请将值设置为`3`
 
 ## 版本
+
+### 2.0.0（2019-08-19）
+
+- 添加`apiver`参数，支持v4 api
 
 ### 1.0.0 (2018-07-03)
 

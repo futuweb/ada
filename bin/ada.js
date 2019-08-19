@@ -8,6 +8,7 @@ const gitlabUrl = args.gitlab || args.g;
 const projectId = args.project || args.p;
 const token = args.token || args.t;
 const commitId = args.commit || args.c;
+const apiVersion = args.apiver || args.a;
 const filePath = path.resolve(args.output || args.o || 'artifacts.zip');
 
 const help = `
@@ -20,6 +21,7 @@ Arguments:
     --token     -t     Gitlab private token
     --commit    -c     Commit id
     --output    -o     Output file (default: ./artifacts.zip)
+    --apiver    -a     API Version (default: 4)
 `
 
 if(!projectId || !token || !commitId){
@@ -27,7 +29,7 @@ if(!projectId || !token || !commitId){
     process.exit(1);
 }
 
-const ada = new Ada(gitlabUrl, projectId, token);
+const ada = new Ada(gitlabUrl, projectId, token, apiVersion);
 console.log('ready to download.');
 ada.download(commitId, filePath).then(() => {
     console.log('artifacts saved: ' + filePath);
