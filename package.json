@@ -1,10 +1,10 @@
 {
   "name": "@futu/ada",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "",
   "main": "lib/index.js",
   "bin": {
-    "ada":"./bin/ada.js"
+    "ada": "./bin/ada.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
