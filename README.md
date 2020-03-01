@@ -49,7 +49,7 @@ ada.download('ee9e4ad637b13e729e0d90c09a9b0990', './dist.zip');
 
 ### 2.1.1（2020-03-02）
 
-- 修复success的job存在时，取不到最新job的问题
+- 修复当多个success状态的job存在时，取不到最新job的问题
 
 ### 2.1.0（2020-01-17）
 
