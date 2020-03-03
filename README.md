@@ -47,6 +47,10 @@ ada.download('ee9e4ad637b13e729e0d90c09a9b0990', './dist.zip');
 
 ## 版本
 
+### 2.1.1（2020-03-02）
+
+- 修复当多个success状态的job存在时，取不到最新job的问题
+
 ### 2.1.0（2020-01-17）
 
 - 支持传递stage参数，选择特定的stage来下载artifacts文件
